@@ -1,14 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Monoton&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+}
+
+:root {
+  --color-primary: #f4a226; /* Orange */
+  --color-secondary: #5a3e2b; /* Dark Brown */
+  --color-accent: #76c7ad; /* Teal */
+  --color-text: #ffebb3;
+  --color-dark: #453227;
 }
 
 body {
-  background-color: #5a3e2b;
+  font-family: 'Quicksand', sans-serif;
+  color: var(--color-secondary);
+  line-height: 1.6;
 }
-
 
 .app {
   width: 100%;
@@ -17,68 +27,138 @@ body {
   grid-template-rows: auto auto 1fr auto;
 }
 
+/* Header */
 h1 {
-  background-color: #f4a226;
+  background-color: var(--color-primary);
   font-family: 'Monoton', cursive;
-  /* جرب تستخدم خط Bold */
   text-align: center;
-  padding: 2rem 0;
-  font-size: 5rem;
-  letter-spacing: 2px;
+  padding: 2.5rem 0;
+  font-size: 4.5rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
 }
 
+/* Form Section */
 .add-form {
   background-color: #e5771f;
-  padding: 2.8rem 0;
+  padding: 2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+.add-form h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+input, select, .actions button, .actions select {
+  background-color: #ffebb3;
+  color: var(--color-secondary);
+  font-family: inherit;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+input:focus { outline: none; transform: scale(1.05); }
+
+.add-form button {
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* List Section */
 .list {
-  background-color: #5a3e2b;
-  color: #ffebb3;
-  padding: 4rem 0;
+  background-color: var(--color-secondary);
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  gap: 3.2rem;
-}
-
-.stats {
-  background-color: #76c7ad;
-  text-align: center;
-  padding: 3.2rem 0;
-  font-weight: bold;
-  font-style: italic;
 }
 
 ul {
   list-style: none;
-  width: 80%;
+  width: 90%;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   align-content: start;
 }
 
 li {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  font-size: 2rem;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  transition: 0.3s;
 }
+
+li:hover { background: rgba(255, 255, 255, 0.1); }
+
+li span { color: var(--color-text); font-size: 1.4rem; }
 
 input[type='checkbox'] {
-  width: 20px;
-  height: 20px;
-  accent-color: #e5771f;
+  width: 22px;
+  height: 22px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
 }
 
-button {
-  cursor: pointer;
+.list button {
+  background: none;
   border: none;
-  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  filter: grayscale(1);
+  transition: 0.2s;
+}
+
+.list button:hover { filter: grayscale(0); transform: scale(1.2); }
+
+/* Actions Bar */
+.actions {
+  text-align: center;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.actions button {
+  background: transparent;
+  border: 2px solid var(--color-text);
+  color: var(--color-text);
+}
+
+.actions button:hover {
+  background: var(--color-text);
+  color: var(--color-secondary);
+}
+
+/* Footer Stats */
+.stats {
+  background-color: var(--color-accent);
+  text-align: center;
+  padding: 2.5rem 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
 }
