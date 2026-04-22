@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #5a3e2b;
+}
+
+
+.app {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+h1 {
+  background-color: #f4a226;
+  font-family: 'Monoton', cursive;
+  /* جرب تستخدم خط Bold */
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 5rem;
+  letter-spacing: 2px;
+}
+
+.add-form {
+  background-color: #e5771f;
+  padding: 2.8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.list {
+  background-color: #5a3e2b;
+  color: #ffebb3;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.2rem;
+}
+
+.stats {
+  background-color: #76c7ad;
+  text-align: center;
+  padding: 3.2rem 0;
+  font-weight: bold;
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  align-content: start;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 2rem;
+}
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  accent-color: #e5771f;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
